@@ -22,19 +22,19 @@ public class VoiceRecorder {
 
     private Disposable voiceEventDisposable;
 
-    private AudioRecord mAudioRecord;
+    private AudioRecord audioRecord;
 
-    private byte[] mBuffer;
+    private byte[] buffer;
 
     /**
      * The timestamp of the last time that voice is heard.
      */
-    private long mLastVoiceHeardMillis = Long.MAX_VALUE;
+    private long lastVoiceHeardMillis = Long.MAX_VALUE;
 
     /**
      * The timestamp when the current voice is started.
      */
-    private long mVoiceStartedMillis;
+    private long voiceStartedMillis;
 
     /**
      * Starts recording audio.
@@ -45,12 +45,12 @@ public class VoiceRecorder {
         // Stop recording if it is currently ongoing.
         stop();
         // Try to create a new recording session.
-        mAudioRecord = createAudioRecord();
-        if (mAudioRecord == null) {
+        audioRecord = createAudioRecord();
+        if (audioRecord == null) {
             throw new RuntimeException("Cannot instantiate VoiceRecorder. Probably the android.permission.RECORD_AUDIO was not granted.");
         }
         // Start recording.
-        mAudioRecord.startRecording();
+        audioRecord.startRecording();
         // Start processing the captured audio.
         voiceEventDisposable = createVoiceEventObservable()
                 .subscribeOn(Schedulers.io())
@@ -65,20 +65,20 @@ public class VoiceRecorder {
             voiceEventDisposable.dispose();
         }
         dismiss();
-        if (mAudioRecord != null) {
-            mAudioRecord.stop();
-            mAudioRecord.release();
-            mAudioRecord = null;
+        if (audioRecord != null) {
+            audioRecord.stop();
+            audioRecord.release();
+            audioRecord = null;
         }
-        mBuffer = null;
+        buffer = null;
     }
 
     /**
      * Dismisses the currently ongoing utterance.
      */
     public void dismiss() {
-        if (mLastVoiceHeardMillis != Long.MAX_VALUE) {
-            mLastVoiceHeardMillis = Long.MAX_VALUE;
+        if (lastVoiceHeardMillis != Long.MAX_VALUE) {
+            lastVoiceHeardMillis = Long.MAX_VALUE;
             voiceEventPublishSubject.onNext(VoiceEvent.end());
         }
     }
@@ -89,8 +89,8 @@ public class VoiceRecorder {
      * @return The sample rate of recorded audio.
      */
     public int getSampleRate() {
-        if (mAudioRecord != null) {
-            return mAudioRecord.getSampleRate();
+        if (audioRecord != null) {
+            return audioRecord.getSampleRate();
         }
         return 0;
     }
@@ -123,7 +123,7 @@ public class VoiceRecorder {
                     sizeInBytes
             );
             if (audioRecord.getState() == AudioRecord.STATE_INITIALIZED) {
-                mBuffer = new byte[sizeInBytes];
+                buffer = new byte[sizeInBytes];
                 return audioRecord;
             } else {
                 audioRecord.release();
@@ -135,23 +135,23 @@ public class VoiceRecorder {
     private Observable<VoiceEvent> createVoiceEventObservable() {
         return Observable.create(emitter -> {
             while (!emitter.isDisposed()) {
-                final int size = mAudioRecord.read(mBuffer, 0, mBuffer.length);
+                final int size = audioRecord.read(buffer, 0, buffer.length);
                 final long now = System.currentTimeMillis();
-                if (isHearingVoice(mBuffer, size)) {
-                    if (mLastVoiceHeardMillis == Long.MAX_VALUE) {
-                        mVoiceStartedMillis = now;
+                if (isHearingVoice(buffer, size)) {
+                    if (lastVoiceHeardMillis == Long.MAX_VALUE) {
+                        voiceStartedMillis = now;
                         emitter.onNext(VoiceEvent.start());
                     }
-                    emitter.onNext(VoiceEvent.voice(mBuffer, size));
-                    mLastVoiceHeardMillis = now;
-                    if (now - mVoiceStartedMillis > MAX_SPEECH_LENGTH_MILLIS) {
-                        mLastVoiceHeardMillis = Long.MAX_VALUE;
+                    emitter.onNext(VoiceEvent.voice(buffer, size));
+                    lastVoiceHeardMillis = now;
+                    if (now - voiceStartedMillis > MAX_SPEECH_LENGTH_MILLIS) {
+                        lastVoiceHeardMillis = Long.MAX_VALUE;
                         emitter.onNext(VoiceEvent.end());
                     }
-                } else if (mLastVoiceHeardMillis != Long.MAX_VALUE) {
-                    emitter.onNext(VoiceEvent.voice(mBuffer, size));
-                    if (now - mLastVoiceHeardMillis > SPEECH_TIMEOUT_MILLIS) {
-                        mLastVoiceHeardMillis = Long.MAX_VALUE;
+                } else if (lastVoiceHeardMillis != Long.MAX_VALUE) {
+                    emitter.onNext(VoiceEvent.voice(buffer, size));
+                    if (now - lastVoiceHeardMillis > SPEECH_TIMEOUT_MILLIS) {
+                        lastVoiceHeardMillis = Long.MAX_VALUE;
                         emitter.onNext(VoiceEvent.end());
                     }
                 }
