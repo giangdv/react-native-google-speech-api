@@ -3,9 +3,11 @@
     package="com.reactlibrary">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
     <application
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <service android:name=".speech_service.SpeechService"/>
     </application>
 </manifest>
   
