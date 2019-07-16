@@ -20,7 +20,7 @@ import React, { Component } from 'react';
 
 const { GoogleSpeechApi } = NativeModules;
 
-const NativeEventEmitter = Platform.select({
+const ProperEventEmitter = Platform.select({
   android: DeviceEventEmitter,
   ios: new NativeEventEmitter(NativeModules.ModuleWithEmitter),
 });
@@ -38,7 +38,7 @@ export default class App extends Component {
 
   componentDidMount(){
   	GoogleSpeechApi.setApiKey("ya29.c.ElpCB13RC3FXH8ZzSJZ7O6BibCJ2LYcqXt5P3BJgcd-gfwmFzRD181mGN2toGwaVuInF8DDahrvihaAo22Rf7OS5OHDUrmdz3vbeiAoL5ajBZKJaqGK5vgF3q9k")
-    NativeEventEmitter.addListener('onSpeechRecognized', (event) => {
+    ProperEventEmitter.addListener('onSpeechRecognized', (event) => {
       var previousTexts = this.state.previousTexts;
       var currentText = event['text']
       var button = "I'm listening"
