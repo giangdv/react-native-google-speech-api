@@ -7,7 +7,7 @@
 #import <React/RCTEventEmitter.h>
 #endif
 
-@interface RNReactNativeGoogleStt : RCTEventEmitter <RCTBridgeModule>
+@interface GoogleSpeechApi : RCTEventEmitter <RCTBridgeModule>
 
 @end
   
