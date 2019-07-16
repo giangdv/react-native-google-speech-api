@@ -3,7 +3,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RNGoogleSpeechApi.xcodeproj">
+      location = "group:RNReactNativeGoogleStt.xcodeproj">
    </FileRef>
 </Workspace>
   
