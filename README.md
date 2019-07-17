@@ -9,6 +9,8 @@
 
 `$ react-native link react-native-google-speech-api`
 
+> iOS: Before `pod install` please make sure Podfile contains a proper path to the .podspec file including **ios** folder. For example `pod 'RNReactNativeGoogleStt', :path => '../node_modules/react-native-google-speech-api/ios` 
+
 ### Manual installation
 
 
@@ -26,13 +28,13 @@
   - Add `new RNGoogleSpeechApiPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-google-speech-api'
-  	project(':react-native-google-speech-api').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-google-speech-api/android')
-  	```
+    	include ':react-native-google-speech-api'
+    	project(':react-native-google-speech-api').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-google-speech-api/android')
+  ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
       compile project(':react-native-google-speech-api')
-  	```
+  ```
 
 #### Windows
 [Read it! :D](https://github.com/ReactWindows/react-native)
@@ -50,4 +52,3 @@ import RNGoogleSpeechApi from 'react-native-google-speech-api';
 // TODO: What to do with the module?
 RNGoogleSpeechApi;
 ```
-  
