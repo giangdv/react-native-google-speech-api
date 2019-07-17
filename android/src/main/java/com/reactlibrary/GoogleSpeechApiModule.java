@@ -64,6 +64,9 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void start() {
         Log.i(TAG, "start");
+        if (apiKey == null){
+            throw new RuntimeException("call setApiKey() with valid access token before calling start()");
+        }
         if (compositeDisposable != null) {
             compositeDisposable.dispose();
         }
