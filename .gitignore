@@ -42,5 +42,4 @@ local.properties
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
       
