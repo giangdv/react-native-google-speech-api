@@ -9,6 +9,8 @@
 
 `$ react-native link react-native-google-speech-api`
 
+> iOS: Before `pod install` please make sure Podfile contains a proper path to the .podspec file including **ios** folder. For example `pod 'RNReactNativeGoogleStt', :path => '../node_modules/react-native-google-speech-api/ios`
+
 ### Manual installation
 
 
@@ -78,8 +80,8 @@ export default class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
-      currentText: "", 
+    this.state = {
+      currentText: "",
       previousTexts: "",
       button: "Start listening"
     };

@@ -4,11 +4,11 @@
 #import "AudioController.h"
 #import "SpeechRecognitionService.h"
 
-#import "RNReactNativeGoogleStt.h"
+#import "GoogleSpeechApi.h"
 
 #define SAMPLE_RATE 16000.0f
 
-@interface RNReactNativeGoogleStt () <AVAudioRecorderDelegate, AVAudioPlayerDelegate, AudioControllerDelegate>
+@interface GoogleSpeechApi () <AVAudioRecorderDelegate, AVAudioPlayerDelegate, AudioControllerDelegate>
 
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
 @property (strong, nonatomic) AVAudioSession *audioSession;
@@ -17,14 +17,14 @@
 
 @end
 
-@implementation RNReactNativeGoogleStt
+@implementation GoogleSpeechApi
 
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
 }
 
-RCT_EXPORT_MODULE(GoogleSpeechApi)
+RCT_EXPORT_MODULE()
 
 - (NSArray<NSString *> *)supportedEvents
 {
