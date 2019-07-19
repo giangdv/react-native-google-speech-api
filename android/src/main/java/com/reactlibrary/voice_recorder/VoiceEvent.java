@@ -6,15 +6,15 @@ public class VoiceEvent {
     private byte[] data;
     private int size;
 
-    public static VoiceEvent start(){
+    public static VoiceEvent start() {
         return new VoiceEvent(State.START, null, 0);
     }
 
-    public static VoiceEvent voice(byte[] data, int size){
+    public static VoiceEvent voice(byte[] data, int size) {
         return new VoiceEvent(State.VOICE, data, size);
     }
 
-    public static VoiceEvent end(){
+    public static VoiceEvent end() {
         return new VoiceEvent(State.END, null, 0);
     }
 

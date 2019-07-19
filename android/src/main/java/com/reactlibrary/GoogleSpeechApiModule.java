@@ -8,6 +8,8 @@ import android.os.IBinder;
 import android.text.TextUtils;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
@@ -64,7 +66,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void start() {
         Log.i(TAG, "start");
-        if (apiKey == null){
+        if (apiKey == null) {
             throw new RuntimeException("call setApiKey() with valid access token before calling start()");
         }
         if (compositeDisposable != null) {
@@ -90,10 +92,11 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void setApiKey(String apiKey) {
-        Log.i(TAG, "setApiKey: " + apiKey);
+        Log.i(TAG, "setApiKey");
         this.apiKey = apiKey;
     }
 
+    @NonNull
     @Override
     public String getName() {
         return TAG;
@@ -156,8 +159,8 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     }
 
     private void sendJSEvent(ReactContext reactContext,
-                           String eventName,
-                           WritableMap params) {
+                             String eventName,
+                             WritableMap params) {
         reactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit(eventName, params);

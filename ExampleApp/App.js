@@ -37,7 +37,7 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-  	GoogleSpeechApi.setApiKey("ya29.c.ElpCB13RC3FXH8ZzSJZ7O6BibCJ2LYcqXt5P3BJgcd-gfwmFzRD181mGN2toGwaVuInF8DDahrvihaAo22Rf7OS5OHDUrmdz3vbeiAoL5ajBZKJaqGK5vgF3q9k")
+  	GoogleSpeechApi.setApiKey("Your google access token")
     EventEmitter.addListener('onSpeechRecognized', (event) => {
       var previousTexts = this.state.previousTexts;
       var currentText = event['text']
@@ -52,7 +52,6 @@ export default class App extends Component {
         previousTexts: previousTexts,
         button: button
       });
-      //GoogleSpeechApi.show(event['text'], 0)
     });
   }
 

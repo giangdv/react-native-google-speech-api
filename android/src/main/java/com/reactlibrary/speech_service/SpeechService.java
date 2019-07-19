@@ -38,6 +38,7 @@ public class SpeechService extends Service {
             Collections.singletonList("https://www.googleapis.com/auth/cloud-platform");
     private static final String HOSTNAME = "speech.googleapis.com";
     private static final int PORT = 443;
+    private static final String LANGUAGE_CODE = "en-US";
 
     private final SpeechBinder binder = new SpeechBinder();
     private SpeechGrpc.SpeechStub speechStub;
@@ -129,7 +130,7 @@ public class SpeechService extends Service {
         requestObserver.onNext(StreamingRecognizeRequest.newBuilder()
                 .setStreamingConfig(StreamingRecognitionConfig.newBuilder()
                         .setConfig(RecognitionConfig.newBuilder()
-                                .setLanguageCode("en-US")
+                                .setLanguageCode(LANGUAGE_CODE)
                                 .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
                                 .setSampleRateHertz(sampleRate)
                                 .build())
