@@ -29,7 +29,9 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     private static final String TAG = "GoogleSpeechApi";
     private static final String KEY_TEXT = "text";
     private static final String KEY_IS_FINAL = "isFinal";
+    private static final String KEY_MESSAGE = "message";
     private static final String ON_SPEECH_RECOGNIZED = "onSpeechRecognized";
+    private static final String ON_SPEECH_RECOGNIZED_ERROR = "onSpeechRecognizedError";
 
     private VoiceRecorder voiceRecorder = new VoiceRecorder();
     private SpeechService speechService;
@@ -46,8 +48,16 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
                             .subscribe(GoogleSpeechApiModule.this::handleSpeechEvent)
             );
             compositeDisposable.add(
+                    speechService.getSpeechErrorEventObservable()
+                            .subscribe(GoogleSpeechApiModule.this::handleErrorEvent)
+            );
+            compositeDisposable.add(
                     voiceRecorder.getVoiceEventObservable()
                             .subscribe(GoogleSpeechApiModule.this::handleVoiceEvent)
+            );
+            compositeDisposable.add(
+                    voiceRecorder.getVoiceErrorEventObservable()
+                            .subscribe(GoogleSpeechApiModule.this::handleErrorEvent)
             );
 
             voiceRecorder.start();
@@ -67,7 +77,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     public void start() {
         Log.i(TAG, "start");
         if (apiKey == null) {
-            throw new RuntimeException("call setApiKey() with valid access token before calling start()");
+            sendJSErrorEvent("call setApiKey() with valid access token before calling start()");
         }
         if (compositeDisposable != null) {
             compositeDisposable.dispose();
@@ -77,7 +87,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
             Intent serviceIntent = new Intent(getReactApplicationContext(), SpeechService.class);
             getReactApplicationContext().bindService(serviceIntent, serviceConnection, Context.BIND_AUTO_CREATE);
         } else {
-            throw new RuntimeException("Another instance of SpeechService is already running");
+            sendJSErrorEvent("Another instance of SpeechService is already running");
         }
     }
 
@@ -156,6 +166,16 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
         if (speechEvent.isFinal()) {
             stop();
         }
+    }
+
+    private void handleErrorEvent(Throwable throwable) {
+        sendJSErrorEvent(throwable.getMessage());
+    }
+
+    private void sendJSErrorEvent(String message){
+        WritableMap params = Arguments.createMap();
+        params.putString(KEY_MESSAGE, message);
+        sendJSEvent(getReactApplicationContext(), ON_SPEECH_RECOGNIZED_ERROR, params);
     }
 
     private void sendJSEvent(ReactContext reactContext,
