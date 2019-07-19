@@ -20,6 +20,8 @@ public class VoiceRecorder {
 
     private PublishSubject<VoiceEvent> voiceEventPublishSubject = PublishSubject.create();
 
+    private PublishSubject<Throwable> voiceErrorEventPublishSubject = PublishSubject.create();
+
     private Disposable voiceEventDisposable;
 
     private AudioRecord audioRecord;
@@ -47,7 +49,8 @@ public class VoiceRecorder {
         // Try to create a new recording session.
         audioRecord = createAudioRecord();
         if (audioRecord == null) {
-            throw new RuntimeException("Cannot instantiate VoiceRecorder. Probably the android.permission.RECORD_AUDIO was not granted.");
+            voiceErrorEventPublishSubject.onNext(new RuntimeException("Cannot instantiate VoiceRecorder. Probably the android.permission.RECORD_AUDIO was not granted."));
+            return;
         }
         // Start recording.
         audioRecord.startRecording();
@@ -97,6 +100,10 @@ public class VoiceRecorder {
 
     public Observable<VoiceEvent> getVoiceEventObservable() {
         return voiceEventPublishSubject;
+    }
+
+    public Observable<Throwable> getVoiceErrorEventObservable() {
+        return voiceErrorEventPublishSubject;
     }
 
     /**

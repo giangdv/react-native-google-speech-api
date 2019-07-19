@@ -44,6 +44,7 @@ public class SpeechService extends Service {
     private SpeechGrpc.SpeechStub speechStub;
     private StreamObserver<StreamingRecognizeRequest> requestObserver;
     private PublishSubject<SpeechEvent> speechEventPublishSubject = PublishSubject.create();
+    private PublishSubject<Throwable> speechErrorEventPublishSubject = PublishSubject.create();
 
     private final StreamObserver<StreamingRecognizeResponse> responseObserver
             = new StreamObserver<StreamingRecognizeResponse>() {
@@ -66,7 +67,7 @@ public class SpeechService extends Service {
 
         @Override
         public void onError(Throwable t) {
-            Log.e(TAG, "Error calling the API.", t);
+            speechErrorEventPublishSubject.onNext(t);
         }
 
         @Override
@@ -90,7 +91,7 @@ public class SpeechService extends Service {
                 try {
                     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
                 } catch (InterruptedException e) {
-                    Log.e(TAG, "Error shutting down the gRPC channel.", e);
+                    speechErrorEventPublishSubject.onNext(e);
                 }
             }
             speechStub = null;
@@ -105,6 +106,10 @@ public class SpeechService extends Service {
 
     public Observable<SpeechEvent> getSpeechEventObservable() {
         return speechEventPublishSubject;
+    }
+
+    public Observable<Throwable> getSpeechErrorEventObservable() {
+        return speechErrorEventPublishSubject;
     }
 
     /**

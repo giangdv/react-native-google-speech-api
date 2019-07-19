@@ -14,6 +14,7 @@ import {
   Text,
   View,
   Button,
+  Alert,
 } from 'react-native';
 
 import React, { Component } from 'react';
@@ -52,6 +53,13 @@ export default class App extends Component {
         previousTexts: previousTexts,
         button: button
       });
+    });
+
+    EventEmitter.addListener('onSpeechRecognizedError', (error) => {
+        Alert.alert(
+          "Error occured", 
+          error['message']
+        );
     });
   }
 
