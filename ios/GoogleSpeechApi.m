@@ -39,10 +39,6 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(setApiKey:(NSString *)apiKey) {
     _apiKey = apiKey;
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:apiKey
-                                                    message:@"NATIVE CODE IS WORKING!" delegate:self cancelButtonTitle:@"Cancel"
-                                          otherButtonTitles:@"OK", nil];
-    [alert show];
 }
 
 RCT_EXPORT_METHOD(start) {
