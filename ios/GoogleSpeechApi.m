@@ -78,7 +78,7 @@ RCT_EXPORT_METHOD(stop) {
         [[SpeechRecognitionService sharedInstance] streamAudioData:self.audioData
                                                     withCompletion:^(StreamingRecognizeResponse *response, NSError *error) {
                                                         if (error) {
-                                                            [self sendEventWithName:@"onSpeechRecognizedError" body:@{@"message": error localizedDescription], @"isFinal":@(YES)}];
+                                                            [self sendEventWithName:@"onSpeechRecognizedError" body:@{@"message": [error localizedDescription], @"isFinal":@(YES)}];
                                                             [self stopSpeech];
                                                         } else if (response) {
                                                             BOOL finished = NO;
