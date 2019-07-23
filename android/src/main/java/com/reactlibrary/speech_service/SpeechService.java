@@ -6,8 +6,6 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
-import androidx.annotation.Nullable;
-
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.speech.v1.RecognitionConfig;
@@ -100,7 +98,6 @@ public class SpeechService extends Service {
         }
     }
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return binder;

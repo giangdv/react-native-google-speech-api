@@ -8,8 +8,6 @@ import android.os.IBinder;
 import android.text.TextUtils;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
@@ -108,7 +106,6 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
         this.apiKey = apiKey;
     }
 
-    @NonNull
     @Override
     public String getName() {
         return TAG;
