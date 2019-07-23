@@ -7,7 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNReactNativeGoogleStt.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNReactNativeGoogleStt.m */; };
+		0AE5B92622E5EEEC00E89785 /* GoogleSpeechApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B8F722E5EEEC00E89785 /* GoogleSpeechApi.m */; };
+		0AE5B92722E5EEEC00E89785 /* operations.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B8FB22E5EEEC00E89785 /* operations.proto */; };
+		0AE5B92822E5EEEC00E89785 /* Operations.pbrpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B8FC22E5EEEC00E89785 /* Operations.pbrpc.m */; };
+		0AE5B92922E5EEEC00E89785 /* Operations.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B8FD22E5EEEC00E89785 /* Operations.pbobjc.m */; };
+		0AE5B92A22E5EEEC00E89785 /* cloud_speech.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B90622E5EEEC00E89785 /* cloud_speech.proto */; };
+		0AE5B92B22E5EEEC00E89785 /* CloudSpeech.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B90722E5EEEC00E89785 /* CloudSpeech.pbobjc.m */; };
+		0AE5B92C22E5EEEC00E89785 /* CloudSpeech.pbrpc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B90822E5EEEC00E89785 /* CloudSpeech.pbrpc.m */; };
+		0AE5B92D22E5EEEC00E89785 /* http.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B90A22E5EEEC00E89785 /* http.proto */; };
+		0AE5B92E22E5EEEC00E89785 /* MonitoredResource.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B90B22E5EEEC00E89785 /* MonitoredResource.pbobjc.m */; };
+		0AE5B92F22E5EEEC00E89785 /* Label.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B90D22E5EEEC00E89785 /* Label.pbobjc.m */; };
+		0AE5B93022E5EEEC00E89785 /* monitored_resource.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B90F22E5EEEC00E89785 /* monitored_resource.proto */; };
+		0AE5B93122E5EEEC00E89785 /* annotations.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91022E5EEEC00E89785 /* annotations.proto */; };
+		0AE5B93222E5EEEC00E89785 /* label.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91222E5EEEC00E89785 /* label.proto */; };
+		0AE5B93322E5EEEC00E89785 /* HTTP.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91322E5EEEC00E89785 /* HTTP.pbobjc.m */; };
+		0AE5B93422E5EEEC00E89785 /* Annotations.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91522E5EEEC00E89785 /* Annotations.pbobjc.m */; };
+		0AE5B93522E5EEEC00E89785 /* code.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91722E5EEEC00E89785 /* code.proto */; };
+		0AE5B93622E5EEEC00E89785 /* status.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91A22E5EEEC00E89785 /* status.proto */; };
+		0AE5B93722E5EEEC00E89785 /* Code.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91D22E5EEEC00E89785 /* Code.pbobjc.m */; };
+		0AE5B93822E5EEEC00E89785 /* Status.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91E22E5EEEC00E89785 /* Status.pbobjc.m */; };
+		0AE5B93922E5EEEC00E89785 /* ErrorDetails.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B91F22E5EEEC00E89785 /* ErrorDetails.pbobjc.m */; };
+		0AE5B93A22E5EEEC00E89785 /* error_details.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B92022E5EEEC00E89785 /* error_details.proto */; };
+		0AE5B93B22E5EEEC00E89785 /* descriptor.proto in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B92322E5EEEC00E89785 /* descriptor.proto */; };
+		0AE5B93C22E5EEEC00E89785 /* Descriptor.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B92422E5EEEC00E89785 /* Descriptor.pbobjc.m */; };
+		0AE5B93D22E5EEEC00E89785 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B92522E5EEEC00E89785 /* AudioController.m */; };
+		0AE5B94022E5EF1600E89785 /* SpeechRecognitionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE5B93F22E5EF1600E89785 /* SpeechRecognitionService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,9 +47,49 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AE5B8F622E5EEEC00E89785 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		0AE5B8F722E5EEEC00E89785 /* GoogleSpeechApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleSpeechApi.m; sourceTree = "<group>"; };
+		0AE5B8F822E5EEEC00E89785 /* GoogleSpeechApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleSpeechApi.h; sourceTree = "<group>"; };
+		0AE5B8FB22E5EEEC00E89785 /* operations.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = operations.proto; sourceTree = "<group>"; };
+		0AE5B8FC22E5EEEC00E89785 /* Operations.pbrpc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operations.pbrpc.m; sourceTree = "<group>"; };
+		0AE5B8FD22E5EEEC00E89785 /* Operations.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Operations.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B8FE22E5EEEC00E89785 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0AE5B8FF22E5EEEC00E89785 /* Operations.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operations.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B90022E5EEEC00E89785 /* Operations.pbrpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operations.pbrpc.h; sourceTree = "<group>"; };
+		0AE5B90422E5EEEC00E89785 /* CloudSpeech.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudSpeech.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B90522E5EEEC00E89785 /* CloudSpeech.pbrpc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudSpeech.pbrpc.h; sourceTree = "<group>"; };
+		0AE5B90622E5EEEC00E89785 /* cloud_speech.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = cloud_speech.proto; sourceTree = "<group>"; };
+		0AE5B90722E5EEEC00E89785 /* CloudSpeech.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudSpeech.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B90822E5EEEC00E89785 /* CloudSpeech.pbrpc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudSpeech.pbrpc.m; sourceTree = "<group>"; };
+		0AE5B90A22E5EEEC00E89785 /* http.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = http.proto; sourceTree = "<group>"; };
+		0AE5B90B22E5EEEC00E89785 /* MonitoredResource.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitoredResource.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B90C22E5EEEC00E89785 /* Annotations.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotations.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B90D22E5EEEC00E89785 /* Label.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Label.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B90E22E5EEEC00E89785 /* HTTP.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTP.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B90F22E5EEEC00E89785 /* monitored_resource.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = monitored_resource.proto; sourceTree = "<group>"; };
+		0AE5B91022E5EEEC00E89785 /* annotations.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = annotations.proto; sourceTree = "<group>"; };
+		0AE5B91122E5EEEC00E89785 /* MonitoredResource.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitoredResource.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B91222E5EEEC00E89785 /* label.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = label.proto; sourceTree = "<group>"; };
+		0AE5B91322E5EEEC00E89785 /* HTTP.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTP.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B91422E5EEEC00E89785 /* Label.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B91522E5EEEC00E89785 /* Annotations.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotations.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B91722E5EEEC00E89785 /* code.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = code.proto; sourceTree = "<group>"; };
+		0AE5B91822E5EEEC00E89785 /* Status.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B91922E5EEEC00E89785 /* Code.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Code.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B91A22E5EEEC00E89785 /* status.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = status.proto; sourceTree = "<group>"; };
+		0AE5B91B22E5EEEC00E89785 /* ErrorDetails.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorDetails.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B91C22E5EEEC00E89785 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0AE5B91D22E5EEEC00E89785 /* Code.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Code.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B91E22E5EEEC00E89785 /* Status.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B91F22E5EEEC00E89785 /* ErrorDetails.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorDetails.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B92022E5EEEC00E89785 /* error_details.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = error_details.proto; sourceTree = "<group>"; };
+		0AE5B92222E5EEEC00E89785 /* Descriptor.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Descriptor.pbobjc.h; sourceTree = "<group>"; };
+		0AE5B92322E5EEEC00E89785 /* descriptor.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = descriptor.proto; sourceTree = "<group>"; };
+		0AE5B92422E5EEEC00E89785 /* Descriptor.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Descriptor.pbobjc.m; sourceTree = "<group>"; };
+		0AE5B92522E5EEEC00E89785 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		0AE5B93E22E5EF1600E89785 /* SpeechRecognitionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechRecognitionService.h; sourceTree = "<group>"; };
+		0AE5B93F22E5EF1600E89785 /* SpeechRecognitionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechRecognitionService.m; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNReactNativeGoogleStt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNReactNativeGoogleStt.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RNReactNativeGoogleStt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNReactNativeGoogleStt.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RNReactNativeGoogleStt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNReactNativeGoogleStt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +103,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AE5B8F922E5EEEC00E89785 /* google */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B8FA22E5EEEC00E89785 /* longrunning */,
+				0AE5B90122E5EEEC00E89785 /* cloud */,
+				0AE5B90922E5EEEC00E89785 /* api */,
+				0AE5B91622E5EEEC00E89785 /* rpc */,
+				0AE5B92122E5EEEC00E89785 /* protobuf */,
+			);
+			path = google;
+			sourceTree = "<group>";
+		};
+		0AE5B8FA22E5EEEC00E89785 /* longrunning */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B8FB22E5EEEC00E89785 /* operations.proto */,
+				0AE5B8FC22E5EEEC00E89785 /* Operations.pbrpc.m */,
+				0AE5B8FD22E5EEEC00E89785 /* Operations.pbobjc.m */,
+				0AE5B8FE22E5EEEC00E89785 /* README.md */,
+				0AE5B8FF22E5EEEC00E89785 /* Operations.pbobjc.h */,
+				0AE5B90022E5EEEC00E89785 /* Operations.pbrpc.h */,
+			);
+			path = longrunning;
+			sourceTree = "<group>";
+		};
+		0AE5B90122E5EEEC00E89785 /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B90222E5EEEC00E89785 /* speech */,
+			);
+			path = cloud;
+			sourceTree = "<group>";
+		};
+		0AE5B90222E5EEEC00E89785 /* speech */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B90322E5EEEC00E89785 /* v1 */,
+			);
+			path = speech;
+			sourceTree = "<group>";
+		};
+		0AE5B90322E5EEEC00E89785 /* v1 */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B90422E5EEEC00E89785 /* CloudSpeech.pbobjc.h */,
+				0AE5B90522E5EEEC00E89785 /* CloudSpeech.pbrpc.h */,
+				0AE5B90622E5EEEC00E89785 /* cloud_speech.proto */,
+				0AE5B90722E5EEEC00E89785 /* CloudSpeech.pbobjc.m */,
+				0AE5B90822E5EEEC00E89785 /* CloudSpeech.pbrpc.m */,
+			);
+			path = v1;
+			sourceTree = "<group>";
+		};
+		0AE5B90922E5EEEC00E89785 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B90A22E5EEEC00E89785 /* http.proto */,
+				0AE5B90B22E5EEEC00E89785 /* MonitoredResource.pbobjc.m */,
+				0AE5B90C22E5EEEC00E89785 /* Annotations.pbobjc.h */,
+				0AE5B90D22E5EEEC00E89785 /* Label.pbobjc.m */,
+				0AE5B90E22E5EEEC00E89785 /* HTTP.pbobjc.h */,
+				0AE5B90F22E5EEEC00E89785 /* monitored_resource.proto */,
+				0AE5B91022E5EEEC00E89785 /* annotations.proto */,
+				0AE5B91122E5EEEC00E89785 /* MonitoredResource.pbobjc.h */,
+				0AE5B91222E5EEEC00E89785 /* label.proto */,
+				0AE5B91322E5EEEC00E89785 /* HTTP.pbobjc.m */,
+				0AE5B91422E5EEEC00E89785 /* Label.pbobjc.h */,
+				0AE5B91522E5EEEC00E89785 /* Annotations.pbobjc.m */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		0AE5B91622E5EEEC00E89785 /* rpc */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B91722E5EEEC00E89785 /* code.proto */,
+				0AE5B91822E5EEEC00E89785 /* Status.pbobjc.h */,
+				0AE5B91922E5EEEC00E89785 /* Code.pbobjc.h */,
+				0AE5B91A22E5EEEC00E89785 /* status.proto */,
+				0AE5B91B22E5EEEC00E89785 /* ErrorDetails.pbobjc.h */,
+				0AE5B91C22E5EEEC00E89785 /* README.md */,
+				0AE5B91D22E5EEEC00E89785 /* Code.pbobjc.m */,
+				0AE5B91E22E5EEEC00E89785 /* Status.pbobjc.m */,
+				0AE5B91F22E5EEEC00E89785 /* ErrorDetails.pbobjc.m */,
+				0AE5B92022E5EEEC00E89785 /* error_details.proto */,
+			);
+			path = rpc;
+			sourceTree = "<group>";
+		};
+		0AE5B92122E5EEEC00E89785 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				0AE5B92222E5EEEC00E89785 /* Descriptor.pbobjc.h */,
+				0AE5B92322E5EEEC00E89785 /* descriptor.proto */,
+				0AE5B92422E5EEEC00E89785 /* Descriptor.pbobjc.m */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -50,8 +213,13 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RNReactNativeGoogleStt.h */,
-				B3E7B5891CC2AC0600A0062D /* RNReactNativeGoogleStt.m */,
+				0AE5B8F922E5EEEC00E89785 /* google */,
+				0AE5B8F622E5EEEC00E89785 /* AudioController.h */,
+				0AE5B92522E5EEEC00E89785 /* AudioController.m */,
+				0AE5B8F822E5EEEC00E89785 /* GoogleSpeechApi.h */,
+				0AE5B8F722E5EEEC00E89785 /* GoogleSpeechApi.m */,
+				0AE5B93E22E5EF1600E89785 /* SpeechRecognitionService.h */,
+				0AE5B93F22E5EF1600E89785 /* SpeechRecognitionService.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +263,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -112,7 +281,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RNReactNativeGoogleStt.m in Sources */,
+				0AE5B93622E5EEEC00E89785 /* status.proto in Sources */,
+				0AE5B93422E5EEEC00E89785 /* Annotations.pbobjc.m in Sources */,
+				0AE5B92922E5EEEC00E89785 /* Operations.pbobjc.m in Sources */,
+				0AE5B92722E5EEEC00E89785 /* operations.proto in Sources */,
+				0AE5B92622E5EEEC00E89785 /* GoogleSpeechApi.m in Sources */,
+				0AE5B92822E5EEEC00E89785 /* Operations.pbrpc.m in Sources */,
+				0AE5B93222E5EEEC00E89785 /* label.proto in Sources */,
+				0AE5B92E22E5EEEC00E89785 /* MonitoredResource.pbobjc.m in Sources */,
+				0AE5B94022E5EF1600E89785 /* SpeechRecognitionService.m in Sources */,
+				0AE5B93522E5EEEC00E89785 /* code.proto in Sources */,
+				0AE5B93322E5EEEC00E89785 /* HTTP.pbobjc.m in Sources */,
+				0AE5B93822E5EEEC00E89785 /* Status.pbobjc.m in Sources */,
+				0AE5B92F22E5EEEC00E89785 /* Label.pbobjc.m in Sources */,
+				0AE5B92D22E5EEEC00E89785 /* http.proto in Sources */,
+				0AE5B92C22E5EEEC00E89785 /* CloudSpeech.pbrpc.m in Sources */,
+				0AE5B93922E5EEEC00E89785 /* ErrorDetails.pbobjc.m in Sources */,
+				0AE5B92B22E5EEEC00E89785 /* CloudSpeech.pbobjc.m in Sources */,
+				0AE5B93122E5EEEC00E89785 /* annotations.proto in Sources */,
+				0AE5B92A22E5EEEC00E89785 /* cloud_speech.proto in Sources */,
+				0AE5B93D22E5EEEC00E89785 /* AudioController.m in Sources */,
+				0AE5B93A22E5EEEC00E89785 /* error_details.proto in Sources */,
+				0AE5B93B22E5EEEC00E89785 /* descriptor.proto in Sources */,
+				0AE5B93022E5EEEC00E89785 /* monitored_resource.proto in Sources */,
+				0AE5B93722E5EEEC00E89785 /* Code.pbobjc.m in Sources */,
+				0AE5B93C22E5EEEC00E89785 /* Descriptor.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",

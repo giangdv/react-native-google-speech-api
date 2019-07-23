@@ -23,7 +23,7 @@ const { GoogleSpeechApi } = NativeModules;
 
 const EventEmitter = Platform.select({
   android: DeviceEventEmitter,
-  ios: new NativeEventEmitter(NativeModules.ModuleWithEmitter),
+  ios: new NativeEventEmitter(GoogleSpeechApi),
 });
 
 export default class App extends Component {
