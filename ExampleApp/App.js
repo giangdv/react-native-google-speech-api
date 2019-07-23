@@ -56,6 +56,9 @@ export default class App extends Component {
     });
 
     EventEmitter.addListener('onSpeechRecognizedError', (error) => {
+        this.setState({
+          button: "Start listening"
+        })
         Alert.alert(
           "Error occured", 
           error['message']

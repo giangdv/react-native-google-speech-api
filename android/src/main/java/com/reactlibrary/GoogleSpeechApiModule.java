@@ -49,6 +49,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
             );
             compositeDisposable.add(
                     speechService.getSpeechErrorEventObservable()
+                            .doAfterNext(event -> stop())
                             .subscribe(GoogleSpeechApiModule.this::handleErrorEvent)
             );
             compositeDisposable.add(
@@ -57,6 +58,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
             );
             compositeDisposable.add(
                     voiceRecorder.getVoiceErrorEventObservable()
+                            .doAfterNext(event -> stop())
                             .subscribe(GoogleSpeechApiModule.this::handleErrorEvent)
             );
 
