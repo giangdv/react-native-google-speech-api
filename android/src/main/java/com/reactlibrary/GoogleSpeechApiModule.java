@@ -131,11 +131,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     private void onVoiceStart() {
         Log.i(TAG, "onVoiceStart");
         if (speechService != null) {
-            try {
-                speechService.startRecognizing(voiceRecorder.getSampleRate(), apiKey);
-            } catch (Exception e) {
-                speechService.startRecognizing(16000, apiKey);
-            }
+            speechService.startRecognizing(voiceRecorder.getSampleRate(), apiKey);
         }
     }
 

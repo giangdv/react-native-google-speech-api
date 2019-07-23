@@ -17,6 +17,7 @@ public class VoiceRecorder {
 
     private static final int SPEECH_TIMEOUT_MILLIS = 2000;
     private static final int MAX_SPEECH_LENGTH_MILLIS = 30 * 1000;
+    private static final int DEFAULT_SAMPLE_RATE = 16000;
 
     private PublishSubject<VoiceEvent> voiceEventPublishSubject = PublishSubject.create();
 
@@ -95,7 +96,7 @@ public class VoiceRecorder {
         if (audioRecord != null) {
             return audioRecord.getSampleRate();
         }
-        return 0;
+        return DEFAULT_SAMPLE_RATE;
     }
 
     public Observable<VoiceEvent> getVoiceEventObservable() {

@@ -39,6 +39,7 @@ public class SpeechService extends Service {
     private static final String HOSTNAME = "speech.googleapis.com";
     private static final int PORT = 443;
     private static final String LANGUAGE_CODE = "en-US";
+    private static final int TERMINATION_TIMEOUT_SECONDS = 5;
 
     private final SpeechBinder binder = new SpeechBinder();
     private SpeechGrpc.SpeechStub speechStub;
@@ -89,7 +90,8 @@ public class SpeechService extends Service {
             final ManagedChannel channel = (ManagedChannel) speechStub.getChannel();
             if (channel != null && !channel.isShutdown()) {
                 try {
-                    channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
+                    channel.shutdown()
+                            .awaitTermination(TERMINATION_TIMEOUT_SECONDS, TimeUnit.SECONDS);
                 } catch (InterruptedException e) {
                     speechErrorEventPublishSubject.onNext(e);
                 }
