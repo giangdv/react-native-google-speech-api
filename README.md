@@ -5,21 +5,14 @@
 
 `$ npm install react-native-google-speech-api --save`
 
-### Mostly automatic installation
-
-`$ react-native link react-native-google-speech-api`
-
-> iOS: Before `pod install` please make sure Podfile contains a proper path to the .podspec file including **ios** folder. For example `pod 'RNReactNativeGoogleStt', :path => '../node_modules/react-native-google-speech-api/ios`
-
+### Caution: Please follow the manual installation guide and DO NOT use react-native link
 ### Manual installation
-
 
 #### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-google-speech-api` and add `RNGoogleSpeechApi.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNGoogleSpeechApi.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+1. Place the module into node_mudules
+2. Add pod 'RNReactNativeGoogleStt', :path => '../node_modules/react-native-google-speech-api/ios' to the Podfile
+3. cd ios and pod install
 
 #### Android
 
