@@ -31,9 +31,6 @@
 ### After installation
 
 
-#### iOS
-
-
 #### Android
 1. Insert following line inside `dependencies` block in `android/app/build.gradle`:
     ```
