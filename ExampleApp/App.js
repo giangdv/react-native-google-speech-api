@@ -15,6 +15,7 @@ import {
   View,
   Button,
   Alert,
+  PermissionsAndroid,
 } from 'react-native';
 
 import React, { Component } from 'react';
@@ -66,6 +67,38 @@ export default class App extends Component {
     });
   }
 
+  startListening = () => {
+    this.setState({
+      button: "I'm listening"
+    })
+    GoogleSpeechApi.start()
+  }
+
+  requestAudioPermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.RECORD_AUDIO,
+        {
+          title: 'Record Audio Permission',
+          message:
+            'App needs access to your microphone ' +
+            'so you can convert speech to text.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('permission granted');
+        this.startListening();
+      } else {
+        console.log('permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  }
+
   render() {
     return (
       <View style={{ margin: 30 }}>
@@ -73,13 +106,7 @@ export default class App extends Component {
         <Text>{this.state.previousTexts}</Text>
         <Button
           title={this.state.button}
-          onPress={() => {
-              this.setState({
-                button: "I'm listening"
-              })
-              GoogleSpeechApi.start()
-            }
-          }/>
+          onPress={Platform.OS === 'ios' ? this.startListening : this.requestAudioPermission}/>
       </View>
     );
   }

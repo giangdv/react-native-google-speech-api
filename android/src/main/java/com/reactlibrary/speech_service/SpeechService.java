@@ -6,8 +6,6 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.google.auth.oauth2.AccessToken;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.speech.v1.RecognitionConfig;
 import com.google.cloud.speech.v1.SpeechGrpc;
 import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
@@ -18,7 +16,6 @@ import com.google.cloud.speech.v1.StreamingRecognizeResponse;
 import com.google.protobuf.ByteString;
 
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -120,14 +117,7 @@ public class SpeechService extends Service {
         final ManagedChannel channel = new OkHttpChannelProvider()
                 .builderForAddress(HOSTNAME, PORT)
                 .nameResolverFactory(new DnsNameResolverProvider())
-                .intercept(new GoogleCredentialsInterceptor(
-                        new GoogleCredentials(
-                                new AccessToken(
-                                        apiKey,
-                                        new Date(Long.MAX_VALUE)
-                                )
-                        )
-                                .createScoped(SCOPE)))
+                .intercept(new GoogleCredentialsInterceptor(apiKey))
                 .build();
         speechStub = SpeechGrpc.newStub(channel);
         requestObserver = speechStub.streamingRecognize(responseObserver);
