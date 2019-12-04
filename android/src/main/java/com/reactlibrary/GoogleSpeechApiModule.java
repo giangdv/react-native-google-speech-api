@@ -35,6 +35,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     private SpeechService speechService;
     private CompositeDisposable compositeDisposable;
     private String apiKey;
+    private String languageCode;
 
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
@@ -101,6 +102,13 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void init(String apiKey, String languageCode) {
+        Log.i(TAG, "setApiKey");
+        this.apiKey = apiKey;
+        this.languageCode = languageCode;
+    }
+    
+    @ReactMethod
     public void setApiKey(String apiKey) {
         Log.i(TAG, "setApiKey");
         this.apiKey = apiKey;
@@ -128,7 +136,7 @@ public class GoogleSpeechApiModule extends ReactContextBaseJavaModule {
     private void onVoiceStart() {
         Log.i(TAG, "onVoiceStart");
         if (speechService != null) {
-            speechService.startRecognizing(voiceRecorder.getSampleRate(), apiKey);
+            speechService.startRecognizing(voiceRecorder.getSampleRate(), apiKey, languageCode);
         }
     }
 

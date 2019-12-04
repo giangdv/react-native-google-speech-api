@@ -33,7 +33,7 @@ public class SpeechService extends Service {
             Collections.singletonList("https://www.googleapis.com/auth/cloud-platform");
     private static final String HOSTNAME = "speech.googleapis.com";
     private static final int PORT = 443;
-    private static final String LANGUAGE_CODE = "en-US";
+    private static final String LANGUAGE_CODE = "ja-JP";
     private static final int TERMINATION_TIMEOUT_SECONDS = 5;
 
     private final SpeechBinder binder = new SpeechBinder();
@@ -113,7 +113,7 @@ public class SpeechService extends Service {
      *
      * @param sampleRate The sample rate of the audio.
      */
-    public void startRecognizing(int sampleRate, String apiKey) {
+    public void startRecognizing(int sampleRate, String apiKey, String languageCode) {
         final ManagedChannel channel = new OkHttpChannelProvider()
                 .builderForAddress(HOSTNAME, PORT)
                 .nameResolverFactory(new DnsNameResolverProvider())
@@ -124,7 +124,7 @@ public class SpeechService extends Service {
         requestObserver.onNext(StreamingRecognizeRequest.newBuilder()
                 .setStreamingConfig(StreamingRecognitionConfig.newBuilder()
                         .setConfig(RecognitionConfig.newBuilder()
-                                .setLanguageCode(LANGUAGE_CODE)
+                                .setLanguageCode(languageCode)
                                 .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
                                 .setSampleRateHertz(sampleRate)
                                 .build())

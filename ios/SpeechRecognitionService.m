@@ -66,7 +66,7 @@
     RecognitionConfig *recognitionConfig = [RecognitionConfig message];
     recognitionConfig.encoding = RecognitionConfig_AudioEncoding_Linear16;
     recognitionConfig.sampleRateHertz = self.sampleRate;
-    recognitionConfig.languageCode = @"en-US";
+    recognitionConfig.languageCode = self.languageCode;
     recognitionConfig.maxAlternatives = 1;
 
     StreamingRecognitionConfig *streamingRecognitionConfig = [StreamingRecognitionConfig message];
